@@ -1,0 +1,157 @@
+      * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    
+    width: 100%;
+    font-family: 'Lato','arial', serif;
+    font-weight: 300;
+    word-spacing: 0.5px;
+    letter-spacing: 0.5px;
+    font-size: 20px;
+    text-rendering: optimizeLegibility;
+    color: #1c1a1a;
+    
+}
+
+.php-trial{
+    font-size: 100%;
+    text-decoration: none;
+    width: 100%;
+    font-family: 'Lato','arial', serif;
+    font-weight: 700;
+    word-spacing: 0.5px;
+    letter-spacing: 0.5px;
+    color: #1c1a1a;
+    background-image: linear-gradient(rgba(5, 5, 5, 0.47),rgba(5, 5, 5, 0.47)) ,url(images/img1.png);
+    
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+.logo{
+
+  height: 25%;
+  border: solid thin #ffffff;
+  margin-bottom: 2%;
+}
+
+.container {
+  /*centers in the container*/
+  text-align: center;
+}
+
+div.circTxt {
+  /*allows for centering*/
+  display: inline-block;
+  /*adjust as needed*/
+  margin:auto;
+  color: #ffffff;
+  font-size: 60%;
+    
+
+}
+          
+.form{
+
+  height: 71%;
+  display: block;
+  border: solid thin #ffffff;
+  font-size: 90%;
+
+}          
+      
+.admin{
+float: left;
+width: 40%;
+margin: 0 2%;
+border: solid thin #ffffff;
+
+
+}
+
+.user{
+
+float: left;
+width: 50%;
+margin: 0 2%;
+border: solid thin #ffffff;
+font-size: 90%;
+
+}
+
+
+input[type=text], input[type=email], input[type=Password], textarea, select {
+    width: 100%;
+    padding: 1% 1%;
+    margin: 1% 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 1%;
+    box-sizing: border-box;
+}
+
+
+
+input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 1% 1%;
+    margin: 1% 0;
+    border: none;
+    border-radius: 1%;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+div {
+    color: #ffffff;
+}
+
+h1{
+
+  text-align: center;
+  font-size: 100%;
+}
+
+.admin_pan{
+
+width: 70%;
+margin: auto;
+
+}
+
+.return{
+
+  width: 20%;
+  margin: auto;
+  float: left;
+}
+
+.icon{
+
+  padding: 2%;
+  font-size: 100%;
+  color: #ffffff;
+}
+
+.cntct:hover,
+.icon:hover{
+
+  color: lightgreen
+}
+
+.cntct{
+
+  text-decoration: none;
+  color: #ffffff;
+}
+
