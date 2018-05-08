@@ -18,8 +18,8 @@
 
 
   </head>
-  <body>
-    <a href="index.php" style="color: purple; font-size: 120%; text-align: center;">HOME</a>
+  <body style="color: #ffffff">
+    <a href="index.php" style="color: #ffffff; font-size: 120%; text-align: center;">HOME</a>
       
 <table width="100%" border="solid thin">
 
@@ -35,7 +35,7 @@
 
 require('connect_db.php');
 
-$query="select * from disease, user where user.Disease=disease.Name";
+$query="select * from disease";
 $run=mysqli_query($con,$query);
 
 while($row=mysqli_fetch_array($run))
@@ -56,7 +56,5 @@ while($row=mysqli_fetch_array($run))
 <?php } ?>
 </table>
 
-</div>
- </div>
  </body>
  </html>

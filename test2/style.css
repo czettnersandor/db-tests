@@ -13,11 +13,13 @@ body{
     font-size: 20px;
     text-rendering: optimizeLegibility;
     color: #1c1a1a;
-    
+    background-image: linear-gradient(rgba(5, 5, 5, 0.47),rgba(5, 5, 5, 0.47)) ,url(images/img2.png);
+    background-size: cover;
 }
 
 .php-trial{
-    font-size: 100%;
+    font-size: 80%;
+    height: 100vh;
     text-decoration: none;
     width: 100%;
     font-family: 'Lato','arial', serif;
@@ -25,11 +27,11 @@ body{
     word-spacing: 0.5px;
     letter-spacing: 0.5px;
     color: #1c1a1a;
-    background-image: linear-gradient(rgba(5, 5, 5, 0.47),rgba(5, 5, 5, 0.47)) ,url(images/img1.png);
     
-    height: 100vh;
+    
+    /*height: 100vh;
     background-repeat: no-repeat;
-    background-size: cover;
+    */
     
 }
 
@@ -61,7 +63,7 @@ div.circTxt {
   height: 71%;
   display: block;
   border: solid thin #ffffff;
-  font-size: 90%;
+  font-size: 100%;
 
 }          
       
@@ -70,17 +72,21 @@ float: left;
 width: 40%;
 margin: 0 2%;
 border: solid thin #ffffff;
+height: 100%;
+word-wrap: break-word;
 
 
 }
 
-.user{
+.user, 
+.diseases{
 
 float: left;
 width: 50%;
 margin: 0 2%;
 border: solid thin #ffffff;
 font-size: 90%;
+height: 100%;
 
 }
 
@@ -155,3 +161,9 @@ margin: auto;
   color: #ffffff;
 }
 
+.user_login,
+.user_display{
+
+  width: 70%;
+  margin: auto;
+}

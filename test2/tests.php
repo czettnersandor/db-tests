@@ -1,100 +1,67 @@
-<html>
-<head>
-<title>jspdf  </title>
-</head>
-<style type="text/css">
- td {
- padding:10px;
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <title>Circular Text,include,pdf</title>
+    
 
-}
- th {
- padding:10px;
- background-color:aqua;
- }
-</style>
+        <meta name="viewport" content ="width=device-width,initial-scale=1,user-scalable=yes" />
+        <link rel="stylesheet" type="text/css" href="css/grid.css">
+        <link rel="stylesheet" type="text/css" href="css/normalize.css">
+         <link rel="stylesheet" type="text/css" href="css/ionicons.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="style.css">
+   
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.2.61/jspdf.min.js"></script>
-<div id="divEmployee">
- <table id="tab_customers">
+<header>
 
-<thead>
- <tr class='warning'>
- <th>ID</th>
- <th>Name</th>
- <th>Join Date</th>
- <th>Age</th>
- </tr>
- </thead>
- <tbody>
- <tr>
- <td>1</td>
- <td>Aman Roy</td>
- <td>March 25, 2014</td>
- <td>25</td>
- </tr>
- <tr>
- <td>2</td>
- <td>Vishal Singh</td>
- <td>January 25, 2014</td>
- <td>26</td>
- </tr>
- <tr>
- <td>3</td>
- <td>Gaurav Singh</td>
- <td>March 25, 2014</td>
- <td>25</td>
- </tr>
- <tr>
- <td>4</td>
- <td>Vinod Palne</td>
- <td>May 25, 2014</td>
- <td>22</td>
- </tr>
- </tbody>
- </table>
- 
+      </header>
+
+
+  </head>
+  <body>
+   
+      <a href="index.php" style="color: purple; font-size: 120%; text-align: center;">HOME</a>
+
+
+<div >
+<table width="100%" border="solid thin">
+
+<tr>
+<th>Disease_Code</th>
+<th>Disease_Name</th>
+<th>Description</th>
+<th>Treatment</th>
+</tr>
+
+<tr>
+
+<?php
+
+require('connect_db.php');
+
+$query="select * from disease";
+$run=mysqli_query($con,$query);
+
+while($row=mysqli_fetch_array($run))
+{
+  $Code=$row[0];
+  $Name=$row[1];
+  $Description=$row[2];
+  $Treatment=$row[3];
+
+?>
+
+<td><?php echo $Code; ?></td>
+<td><?php echo $Name; ?></td>
+<td><?php echo $Description; ?></td>
+<td><?php echo $Treatment; ?></td>
+
+</tr>
+<?php } ?>
+</table>
+
 </div>
-<button onclick="javascript:Export();">Export To PDF</button>
-<script type="text/javascript">
- function Export() {
- var pdf = new jsPDF('p', 'pt', 'letter');
-
-pdf.text(50, 25, "Employee Report");
- // source can be HTML-formatted string, or a reference
- // to an actual DOM element from which the text will be scraped.
- source = document.getElementById('divEmployee').innerHTML;
-
-// we support special element handlers. Register them with jQuery-style
- // ID selector for either ID or node name. ("#iAmID", "div", "span" etc.)
- // There is no support for any other type of selectors
- // (class, of compound) at this time.
- specialElementHandlers = {
- // element with id of "bypass" - jQuery style selector
- '#bypassme': function (element, renderer) {
- // true = "handled elsewhere, bypass text extraction"
- return true
- }
- };
- margins = {
- top: 80,
- bottom: 60,
- left: 40,
- width: 522
- };
- // all coords and widths are in jsPDF instance's declared units
- // 'inches' in this case
- pdf.fromHTML(
- source, // HTML string or DOM elem ref.
- margins.left, // x coord
- margins.top, { // y coord
- 'width': margins.width, // max width of content on PDF
- 'elementHandlers': specialElementHandlers
- },
-
-function (dispose) {
- // dispose: object with X, Y of the last line add to the PDF
- // this allow the insertion of new lines after html
- pdf.save('Test.pdf');
- }, margins);
- }
-</script></html>
+ </div>
+ </body>
+ </html>

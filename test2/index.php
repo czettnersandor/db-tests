@@ -10,7 +10,7 @@
         <link rel="stylesheet" type="text/css" href="css/normalize.css">
          <link rel="stylesheet" type="text/css" href="css/ionicons.min.css">
         <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="style.css">
 
 <header>
 
@@ -69,6 +69,7 @@ circularText("COHESION DIGITAL HEALTH PARTNER ", 70, 0);
   
     <input type="submit" value="LOGIN" name="adm_log">
   </form>
+</div>
 
 
 
@@ -76,31 +77,38 @@ circularText("COHESION DIGITAL HEALTH PARTNER ", 70, 0);
 
 <div class="contacts">
 <i class="ion-iphone icon"></i><b>0141 249 0641</b><br><br>
-<i class="ion-ios-email-outline icon"><a href="" class="cntct"></i><b>hello@cohesiondigital.co.uk</b></a><br><br>
-<a href="#" class="cntct"><i class="ion-social-facebook icon"></i>
-<a href="#" class="cntct"><i class="ion-social-instagram icon"></i>
+<i class="ion-ios-email-outline icon"></i><a href="" class="cntct"><b>hello@cohesiondigital.co.uk</b></a><br><br>
+<a href="#" class="cntct"><i class="ion-social-facebook icon"></i></a>
+<a href="#" class="cntct"><i class="ion-social-instagram icon"></i></a>
 <a href="#" class="cntct"><i class="ion-social-twitter icon"></i></a>
-<a href="#" class="cntct"><i class="ion-social-linkedin icon"></i>
+<a href="#" class="cntct"><i class="ion-social-linkedin icon"></i></a>
 
 </div>
 
 
-
-</div>
 
 </div>
 
 
 <div class="user">
-	<h1>INQUIRY</h1>
+	<h1>SIGN UP  OR <a href="user_login.php">LOGIN HERE</a></h1>
 
 <div>
   <form action="client.php" method="post">
-    <label for="fname">Full Name</label>
-    <input type="text" id="fname" name="fullname" placeholder="Your full name.." required>
+    <label for="fname">First Name</label>
+    <input type="text" id="fname" name="fname" placeholder="Your First name.." required>
+
+     <label for="lname">Last Name</label>
+    <input type="text" id="lname" name="lname" placeholder="Your Last name.." required>
 
     <label for="email">Email Address</label>
     <input type="email" id="email" name="email" placeholder="Your email.." required>
+
+    <label for="password">Password</label>
+    <input type="password" id="password" name="pass" placeholder="Create a password.." required>
+
+    <label for="cpass">Confirm Password</label>
+    <input type="password" id="password" name="cpass" placeholder="Confirm the password.." required>
 
     <label for="country">Country</label>
     <select id="country" name="country">
@@ -109,13 +117,13 @@ circularText("COHESION DIGITAL HEALTH PARTNER ", 70, 0);
       <option value="USA">USA</option>
     </select>
 
-    <label for="disease">Disease</label>
+   <!-- <label for="disease">Disease</label>
     <select id="disease" name="disease">
       <option value="MUMPS-1">Mumps1</option>
       <option value="MUMPS-2">Mumps2</option>
       <option value="TYPHOID">Typhoid</option>
        <option value="MALARIA">Malaria</option>
-    </select>
+    </select>-->
   
     <input type="submit" value="Submit" name="inquiry">
   </form>
