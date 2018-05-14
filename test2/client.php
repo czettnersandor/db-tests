@@ -10,13 +10,59 @@ if(isset($_POST['inquiry']))
 $FName=$_POST['fname'];
 $LName=$_POST['lname'];
 $Email=$_POST['email'];
-$Password=md5($_POST['pass']);
-$Cpassword=md5($_POST['cpass']);
+$Password=($_POST['pass']);
+$Cpassword=($_POST['cpass']);
 $Country=$_POST['country'];
 
 
+$Email=mysqli_real_escape_string($con, $Email);
+$LName=mysqli_real_escape_string($con, $LName);
+$FName=mysqli_real_escape_string($con, $FName);
 
-$check_user="select * from email_server where Emails='$Email'";
+
+
+$hashFormat="$2y$10$";
+  $salt="ipreferusinghashtoencryptmypasswords";
+  $hash_salt= $hashFormat . $salt;
+
+  $Password= crypt($hash_salt, $Password);
+  $Password=mysqli_real_escape_string($con,$Password);
+
+
+$hashFormat="$2y$10$";
+  $salt="ipreferusinghashtoencryptmypasswords";
+  $hash_salt= $hashFormat . $salt;
+
+  $Cpassword= crypt($hash_salt, $Cpassword);
+  $Cpassword=mysqli_real_escape_string($con, $Cpassword);
+
+
+
+if(strlen($FName)<3 || strlen(LName)<3)
+{
+
+	echo "<script>window.open('index.php', '_self'), alert('Name too short')</script>";
+	exit();
+}
+
+if(strlen($FName)>15 || strlen($LName)>15)
+{
+
+	echo "<script>window.open('index.php', '_self'), alert('Name too long')</script>";
+	exit();
+}
+
+
+if(strlen($Password)<8)
+{
+
+	echo "<script>window.open('index.php', '_self'), alert('Password should not be less than 8 characters')</script>";
+	exit();
+}
+
+
+
+$check_user="select * from email_server where Email='$Email'";
 	
 	$run=mysqli_query($con,$check_user);
 	

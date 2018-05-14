@@ -1,12 +1,17 @@
 <?php
 session_start();
-require('connect_db.php');
+//require('connect_db.php');
+include "function_disease_fetch.php";
+
+
 if(!$_SESSION['Email']){
   
   header ("location: user_login.php");
+  exit();
 }
 else{
   $Email=$_SESSION['Email'];
+  
 }
 
 $result1 = ("SELECT FName AS name1 FROM user WHERE Email='$Email'"); 
@@ -52,7 +57,7 @@ $name2 = $row['name2'];
   <div class="user_display">
 
 
-    <a href="index.php" style="color: #ffffff; font-size: 120%; position: fixed; left: 5%; top: 5%;">HOME</a><br><br>
+    <a href="user_logout.php" style="color: #ffffff; font-size: 120%; position: fixed; left: 5%; top: 5%;">LOGOUT</a><br><br>
     <a href="all_diseases.php" style="color: #ffffff; font-size: 120%; position: fixed; right: 5%;">ALL DISEASES AVAILABLE</a><br><br>
 
     <div>
@@ -64,12 +69,19 @@ $name2 = $row['name2'];
 
    <label for="disease">Select the Disease</label>
     <select id="disease" name="disease">
-      <option value="MMUMPS-1">Mumps1</option>
-      <option value="MUMPS-2">Mumps2</option>
-      <option value="TYPHOID">Typhoid</option>
-       <option value="MALARIA">Malaria</option>
-       <option value="DIABETES-1">Diabetes-1</option>
-       <option value="DIABETES-2">Diabetes-2</option>
+		
+		<?php
+		
+		
+		
+		
+		disease_fetch();
+		
+		
+		
+		?>
+   
+      
     </select>
   
     <input type="submit" value="Submit" name="inquiry">

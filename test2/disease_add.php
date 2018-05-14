@@ -11,6 +11,11 @@ $Name=$_POST['disease'];
 $Description=$_POST['description'];
 $Treatment=$_POST['treatment'];
 
+
+$Name=mysqli_real_escape_string($con, $Name);
+$Description=mysqli_real_escape_string($con, $Description);
+$Treatment=mysqli_real_escape_string($con, $Treatment);
+
 $mysql="insert into disease VALUES('$Code','$Name','$Description','$Treatment')";
 if(mysqli_query($con,$mysql))
 {

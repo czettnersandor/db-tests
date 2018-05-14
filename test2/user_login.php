@@ -62,7 +62,7 @@ circularText("COHESION DIGITAL HEALTH PARTNER ", 70, 0);
       	
 
 	<div class="user_login">
-<h1>USER LOGIN</h1>
+<h1>USER LOGIN <div class="return"><a href="index.php" style="color: orange">HOME</a></div></h1>
 
 <div>
   <form method="post">
@@ -91,8 +91,24 @@ circularText("COHESION DIGITAL HEALTH PARTNER ", 70, 0);
 require('connect_db.php');
 if(isset($_POST['login']))
 {
-  $Password=md5($_POST['user_pass']);
+  $Password=($_POST['user_pass']);
   $Email=$_POST['user_email'];
+
+
+  $Password=mysqli_real_escape_string($con, $Password);
+  $Email=mysqli_real_escape_string($con, $Email);
+
+
+
+
+  $hashFormat="$2y$10$";
+  $salt="ipreferusinghashtoencryptmypasswords";
+  $hash_salt= $hashFormat . $salt;
+
+  $Password= crypt($hash_salt, $Password);
+
+
+
   
   $check_user="select * from user WHERE Password='$Password' AND Email='$Email'";
   
